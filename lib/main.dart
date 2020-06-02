@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'hero.dart';
+import 'season_grid.dart';
 
 void main() {
   runApp(MyApp());
@@ -34,6 +35,7 @@ class MyHomePage extends StatelessWidget {
         ),
         body: Column(children: [
           heroSection,
+          seasonGrid,
         ]));
   }
 }
