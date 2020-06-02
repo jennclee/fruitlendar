@@ -32,10 +32,8 @@ class MyHomePage extends StatelessWidget {
         appBar: AppBar(
           title: Text(this.title),
         ),
-        body: Column(
-          children: <Widget>[
-            new HeroSection(),
-          ],
-        ));
+        body: Column(children: [
+          heroSection,
+        ]));
   }
 }
