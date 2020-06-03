@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'models/season.dart';
+import 'season_page.dart';
 
 class ImageCard extends StatelessWidget {
   final SeasonModel season;
@@ -11,9 +12,13 @@ class ImageCard extends StatelessWidget {
     return Card(
       color: season.mainColor,
       child: InkWell(
-        splashColor: season.mainColor.withAlpha(30),
+        splashColor: season.mainColor,
         onTap: () {
-          print('hello');
+          Navigator.pushNamed(
+            context,
+            SeasonPage.routeName,
+            arguments: season,
+          );
         },
         child: Container(
           height: 200,
