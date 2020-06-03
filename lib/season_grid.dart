@@ -1,10 +1,14 @@
 import 'package:flutter/material.dart';
-import 'season_card.dart';
+import 'image_card.dart';
 
-final springContainer = seasonCard('Spring', Colors.lightGreen[300]);
-final summmerContainer = seasonCard('Summer', Colors.amber);
-final autumnContainer = seasonCard('Autumn', Colors.orange[700]);
-final winterContainer = seasonCard('Winter', Colors.lightBlue[300]);
+final springContainer =
+    imageCard('Spring', Colors.pink[100], 'images/spring-border-unsplash.jpg');
+final summmerContainer = imageCard(
+    'Summer', Colors.lightBlue[100], 'images/summer-border-unsplash.jpg');
+final autumnContainer =
+    imageCard('Autumn', Colors.orange[700], 'images/autumn-unsplash.jpg');
+final winterContainer = imageCard(
+    'Winter', Colors.blueGrey[200], 'images/winter-border-unsplash.jpg');
 
 Widget seasonGrid = Container(
     padding: const EdgeInsets.all(25),
