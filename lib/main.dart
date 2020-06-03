@@ -34,7 +34,7 @@ class MyHomePage extends StatelessWidget {
       ),
       body: Column(children: [
         heroSection,
-        seasonGrid,
+        SeasonGrid(),
       ]),
     );
   }
