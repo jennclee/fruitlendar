@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import 'package:flutter/cupertino.dart';
 import 'models/season.dart';
 
 class SeasonPage extends StatelessWidget {
@@ -8,11 +8,11 @@ class SeasonPage extends StatelessWidget {
   Widget build(BuildContext context) {
     final SeasonModel args = ModalRoute.of(context).settings.arguments;
 
-    return Scaffold(
-        appBar: AppBar(
-          title: Text(args.name),
+    return CupertinoPageScaffold(
+        navigationBar: CupertinoNavigationBar(
+          middle: Text(args.name),
         ),
-        body: Center(
+        child: Center(
           child: Container(
             color: args.mainColor,
             child: Text('Fruits list'),

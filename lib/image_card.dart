@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/cupertino.dart';
 import 'models/season.dart';
 import 'season_page.dart';
 
@@ -9,35 +10,39 @@ class ImageCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Card(
-      color: season.mainColor,
-      child: InkWell(
-        splashColor: season.mainColor,
-        onTap: () {
-          Navigator.pushNamed(
-            context,
-            SeasonPage.routeName,
-            arguments: season,
-          );
-        },
-        child: Container(
-          height: 200,
-          alignment: Alignment.center,
-          decoration: new BoxDecoration(
-            image: new DecorationImage(
-              image: new AssetImage(season.imageLink),
-              fit: BoxFit.cover,
+    return Container(
+      height: 200,
+      width: 200,
+      child: SafeArea(
+        child: CupertinoButton(
+          child: Container(
+            height: 200,
+            width: 200,
+            decoration: BoxDecoration(
+              image: DecorationImage(
+                image: AssetImage(season.imageLink),
+                fit: BoxFit.cover,
+              ),
+              borderRadius: BorderRadius.circular(12),
+            ),
+            child: Container(
+              margin: EdgeInsets.all(7),
+              child: Text(
+                season.name,
+                style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 20,
+                    fontWeight: FontWeight.w600),
+              ),
             ),
           ),
-          child: new Text(
-            season.name,
-            style: new TextStyle(
-              fontWeight: FontWeight.bold,
-              fontSize: 20,
-              color: Colors.black87,
-            ),
-          ),
-          margin: const EdgeInsets.all(5),
+          onPressed: () {
+            Navigator.pushNamed(
+              context,
+              SeasonPage.routeName,
+              arguments: season,
+            );
+          },
         ),
       ),
     );
