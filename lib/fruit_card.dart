@@ -42,7 +42,7 @@ class FruitCard extends StatelessWidget {
                   ),
                 ),
                 Container(
-                  height: 35,
+                  height: 50,
                   alignment: Alignment.center,
                   decoration: BoxDecoration(
                     color: Colors.amber[50],
@@ -61,6 +61,7 @@ class FruitCard extends StatelessWidget {
               ],
             ),
             back: Container(
+              height: 150,
               padding: const EdgeInsets.all(10),
               alignment: Alignment.center,
               decoration: BoxDecoration(
