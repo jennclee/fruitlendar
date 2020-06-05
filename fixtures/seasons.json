@@ -5,12 +5,12 @@
     "fruits": [
       {
         "name": "apple",
-        "image": "",
+        "image": "images/icons8-apple-50.png",
         "info": "There are many types of apples. Fuji, Granny Smith, Pink Lady just to name a few."
       },
       {
         "name": "orange",
-        "image": "",
+        "image": "images/icons8-citrus-50.png",
         "info": "Orange you glad you picked this fruit?"
       }
     ]
