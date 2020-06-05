@@ -21,7 +21,7 @@
     "fruits": [
       {
         "name": "banana",
-        "image": "",
+        "image": "images/icons8-banana-50.png",
         "info": "I'm bananas over bananas!"
       }
     ]
@@ -32,12 +32,12 @@
     "fruits": [
       {
         "name": "peach",
-        "image": "",
+        "image": "images/icons8-peach-50.png",
         "info": "Some folks are peachy keen on peaches."
       },
       {
         "name": "cantaloupe",
-        "image": "",
+        "image": "images/icons8-melon-50.png",
         "info": "What did the honeydew say to the watermelon?\nI love you, but we just cantaloupe!"
       }
     ]
@@ -48,7 +48,7 @@
     "fruits": [
       {
         "name": "grape",
-        "image": "",
+        "image": "images/icons8-grapes-50.png",
         "info": "This season has grape deals on fruits!"
       }
     ]

@@ -55,6 +55,10 @@ flutter:
     - images/winter-mountain-unsplash.jpg
     - images/icons8-apple-50.png
     - images/icons8-citrus-50.png
+    - images/icons8-banana-50.png
+    - images/icons8-grapes-50.png
+    - images/icons8-melon-50.png
+    - images/icons8-peach-50.png
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
   # For details regarding adding assets from package dependencies, see
