@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/cupertino.dart';
 import 'hero.dart';
 import 'season_grid.dart';
+import 'season_page.dart';
 
 void main() {
   runApp(MyApp());
@@ -11,14 +13,21 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: _title,
-      theme: ThemeData(
-        primarySwatch: Colors.orange,
-        accentColor: Colors.lightGreen[300],
-      ),
-      home: MyHomePage(title: _title),
-    );
+    return CupertinoApp(
+        title: _title,
+        theme: CupertinoThemeData(
+          barBackgroundColor: Colors.orange,
+          primaryColor: Colors.orange,
+          primaryContrastingColor: Colors.lightGreen[300],
+          scaffoldBackgroundColor: Colors.amber[100],
+          textTheme: CupertinoTextThemeData(
+            textStyle: TextStyle(color: Colors.black87),
+          ),
+        ),
+        home: MyHomePage(title: _title),
+        routes: {
+          SeasonPage.routeName: (context) => SeasonPage(),
+        });
   }
 }
 
@@ -28,11 +37,11 @@ class MyHomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(this.title),
+    return CupertinoPageScaffold(
+      navigationBar: CupertinoNavigationBar(
+        middle: Text(this.title, style: TextStyle(color: Colors.black87)),
       ),
-      body: Column(children: [
+      child: Column(children: [
         heroSection,
         SeasonGrid(),
       ]),

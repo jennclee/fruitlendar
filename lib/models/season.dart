@@ -1,21 +1,22 @@
-import 'package:flutter/material.dart';
+import 'fruit.dart';
 
-class SeasonModel {
-  final String name;
-  final Color mainColor;
-  final String imageLink;
+class Season {
+  String name;
+  String image;
+  List<Fruit> fruits;
 
-  SeasonModel(this.name, this.mainColor, this.imageLink);
+  Season({this.name, this.image, this.fruits});
+
+  factory Season.fromJson(Map<String, dynamic> jsonData) {
+    List<Fruit> fruitlist = [];
+    for (var i = 0; i < jsonData['fruits'].length; i++) {
+      fruitlist.add(new Fruit.fromJson(jsonData['fruits'][i]));
+    }
+
+    return Season(
+      name: jsonData['name'],
+      image: jsonData['imageLink'],
+      fruits: fruitlist,
+    );
+  }
 }
-
-final springModel = new SeasonModel(
-    'Spring', Colors.pink[100], 'images/spring-border-unsplash.jpg');
-
-final summerModel = new SeasonModel(
-    'Summer', Colors.lightBlue[100], 'images/summer-border-unsplash.jpg');
-
-final autumnModel =
-    new SeasonModel('Autumn', Colors.orange[700], 'images/autumn-unsplash.jpg');
-
-final winterModel = new SeasonModel(
-    'Winter', Colors.blueGrey[200], 'images/winter-border-unsplash.jpg');

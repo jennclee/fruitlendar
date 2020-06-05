@@ -1,0 +1,56 @@
+[
+  {
+    "name": "Spring",
+    "imageLink": "images/spring-cherry-blossom-unsplash.jpg",
+    "fruits": [
+      {
+        "name": "apple",
+        "image": "images/icons8-apple-50.png",
+        "info": "There are many types of apples. Fuji, Granny Smith, Pink Lady just to name a few."
+      },
+      {
+        "name": "orange",
+        "image": "images/icons8-citrus-50.png",
+        "info": "Orange you glad you picked this fruit?"
+      }
+    ]
+  },
+  {
+    "name": "Summer",
+    "imageLink": "images/summer-border-unsplash.jpg",
+    "fruits": [
+      {
+        "name": "banana",
+        "image": "images/icons8-banana-50.png",
+        "info": "I'm bananas over bananas!"
+      }
+    ]
+  },
+  {
+    "name": "Autumn",
+    "imageLink": "images/autumn-trees-unsplash.jpg",
+    "fruits": [
+      {
+        "name": "peach",
+        "image": "images/icons8-peach-50.png",
+        "info": "Some folks are peachy keen on peaches."
+      },
+      {
+        "name": "cantaloupe",
+        "image": "images/icons8-melon-50.png",
+        "info": "What did the honeydew say to the watermelon?\nI love you, but we just cantaloupe!"
+      }
+    ]
+  },
+  {
+    "name": "Winter",
+    "imageLink": "images/winter-mountain-unsplash.jpg",
+    "fruits": [
+      {
+        "name": "grape",
+        "image": "images/icons8-grapes-50.png",
+        "info": "This season has grape deals on fruits!"
+      }
+    ]
+  }
+]
