@@ -4,7 +4,7 @@ import 'models/season.dart';
 import 'season_page.dart';
 
 class ImageCard extends StatelessWidget {
-  final SeasonModel season;
+  final Season season;
 
   ImageCard(this.season);
 
