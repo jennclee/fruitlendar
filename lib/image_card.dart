@@ -20,7 +20,7 @@ class ImageCard extends StatelessWidget {
             width: 200,
             decoration: BoxDecoration(
               image: DecorationImage(
-                image: AssetImage(season.imageLink),
+                image: AssetImage(season.image),
                 fit: BoxFit.cover,
               ),
               borderRadius: BorderRadius.circular(12),

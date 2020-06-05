@@ -2,10 +2,10 @@ import 'fruit.dart';
 
 class Season {
   String name;
-  String imageLink;
+  String image;
   List<Fruit> fruits;
 
-  Season({this.name, this.imageLink, this.fruits});
+  Season({this.name, this.image, this.fruits});
 
   factory Season.fromJson(Map<String, dynamic> jsonData) {
     List<Fruit> fruitlist = [];
@@ -15,7 +15,7 @@ class Season {
 
     return Season(
       name: jsonData['name'],
-      imageLink: jsonData['imageLink'],
+      image: jsonData['imageLink'],
       fruits: fruitlist,
     );
   }
