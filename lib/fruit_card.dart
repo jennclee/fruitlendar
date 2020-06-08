@@ -19,20 +19,22 @@ class FruitCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 250,
+      height: 150,
       width: 200,
       child: SafeArea(
         child: CupertinoButton(
+          padding: const EdgeInsets.all(10),
           child: FlipCard(
             direction: FlipDirection.HORIZONTAL,
             front: Column(
               children: [
                 Container(
-                  alignment: Alignment.center,
                   height: 100,
                   width: 200,
+                  alignment: Alignment.center,
                   child: Image.asset(
                     fruit.image,
+                    height: 60,
                   ),
                   decoration: BoxDecoration(
                     color: Colors.amber[50],

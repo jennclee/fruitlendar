@@ -53,12 +53,29 @@ flutter:
     - images/summer-border-unsplash.jpg
     - images/autumn-trees-unsplash.jpg
     - images/winter-mountain-unsplash.jpg
-    - images/icons8-apple-50.png
-    - images/icons8-citrus-50.png
-    - images/icons8-banana-50.png
-    - images/icons8-grapes-50.png
-    - images/icons8-melon-50.png
-    - images/icons8-peach-50.png
+    - images/apple.png
+    - images/apricot.png
+    - images/avocado.png
+    - images/banana.png
+    - images/blackcurrant.png
+    - images/blueberry.png
+    - images/cherry.png
+    - images/cranberry.png
+    - images/grapefruit.png
+    - images/grapes.png
+    - images/kiwi.png
+    - images/lemon.png
+    - images/lime.png
+    - images/mango.png
+    - images/melon.png
+    - images/orange.png
+    - images/peach.png
+    - images/pear.png
+    - images/pineapple.png
+    - images/plum.png
+    - images/raspberry.png
+    - images/strawberry.png
+    - images/tomato.png
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
   # For details regarding adding assets from package dependencies, see
