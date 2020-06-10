@@ -1,5 +1,5 @@
-[
-  {
+{
+  "Spring": {
     "name": "Spring",
     "imageLink": "images/spring-cherry-blossom-unsplash.jpg",
     "fruits": [
@@ -47,7 +47,7 @@
       }
     ]
   },
-  {
+  "Summer": {
     "name": "Summer",
     "imageLink": "images/summer-border-unsplash.jpg",
     "fruits": [
@@ -143,7 +143,7 @@
       }
     ]
   },
-  {
+  "Autumn": {
     "name": "Autumn",
     "imageLink": "images/autumn-trees-unsplash.jpg",
     "fruits": [
@@ -203,7 +203,7 @@
       }
     ]
   },
-  {
+  "Winter": {
     "name": "Winter",
     "imageLink": "images/winter-mountain-unsplash.jpg",
     "fruits": [
@@ -257,4 +257,4 @@
       }
     ]
   }
-]
+}
