@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'models/season.dart';
+import 'styles.dart';
 import 'image_card.dart';
 
 class HeroSection extends StatelessWidget {
@@ -18,10 +19,7 @@ class HeroSection extends StatelessWidget {
                 child: Text(
                   'Current season',
                   textAlign: TextAlign.left,
-                  style: TextStyle(
-                      fontSize: 24,
-                      color: Colors.black87,
-                      fontWeight: FontWeight.bold),
+                  style: Styles.header,
                 ),
               ),
             ],

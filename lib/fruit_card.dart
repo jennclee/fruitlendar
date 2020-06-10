@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flip_card/flip_card.dart';
 import 'models/fruit.dart';
+import 'styles.dart';
 
 class FruitCard extends StatelessWidget {
   final Fruit fruit;
@@ -54,10 +55,7 @@ class FruitCard extends StatelessWidget {
                   ),
                   child: Text(
                     fruit.name,
-                    style: TextStyle(
-                        color: Colors.black87,
-                        fontSize: 20,
-                        fontWeight: FontWeight.w600),
+                    style: Styles.fruitCardTitle,
                   ),
                 ),
               ],
@@ -72,9 +70,7 @@ class FruitCard extends StatelessWidget {
               ),
               child: Text(
                 fruit.info,
-                style: TextStyle(
-                  color: Colors.black87,
-                ),
+                style: Styles.cardDescription,
               ),
             ),
           ),

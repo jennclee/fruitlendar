@@ -6,6 +6,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/services.dart' show rootBundle;
 
 import 'models/season.dart';
+import 'styles.dart';
 import 'fixtures/northAmericaSeasons.dart';
 import 'hero.dart';
 import 'season_grid.dart';
@@ -26,7 +27,7 @@ class MyApp extends StatelessWidget {
           barBackgroundColor: Colors.orange,
           primaryColor: Colors.orange,
           primaryContrastingColor: Colors.lightGreen[300],
-          scaffoldBackgroundColor: Colors.amber[100],
+          scaffoldBackgroundColor: Styles.scaffoldBackground,
           textTheme: CupertinoTextThemeData(
             textStyle: TextStyle(color: Colors.black87),
           ),

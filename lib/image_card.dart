@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'models/season.dart';
+import 'styles.dart';
 import 'season_page.dart';
 
 class ImageCard extends StatelessWidget {
@@ -12,12 +13,10 @@ class ImageCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       height: 200,
-      // width: 200,
       child: SafeArea(
         child: CupertinoButton(
           child: Container(
             height: 200,
-            // width: 200,
             decoration: BoxDecoration(
               image: DecorationImage(
                 image: AssetImage(season.image),
@@ -29,10 +28,7 @@ class ImageCard extends StatelessWidget {
               margin: EdgeInsets.all(7),
               child: Text(
                 season.name,
-                style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 20,
-                    fontWeight: FontWeight.w600),
+                style: Styles.imageCardTitle,
               ),
             ),
           ),

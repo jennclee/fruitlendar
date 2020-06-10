@@ -1,7 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'image_card.dart';
 import 'models/season.dart';
+import 'styles.dart';
+import 'image_card.dart';
 
 class SeasonGrid extends StatelessWidget {
   final Map<String, Season> seasons;
@@ -23,10 +24,7 @@ class SeasonGrid extends StatelessWidget {
               child: Text(
                 'Explore other seasons',
                 textAlign: TextAlign.left,
-                style: TextStyle(
-                    color: Colors.black87,
-                    fontSize: 24,
-                    fontWeight: FontWeight.bold),
+                style: Styles.header,
               ),
             ),
           ]),
