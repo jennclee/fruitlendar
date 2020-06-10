@@ -48,7 +48,6 @@ flutter:
   #   - images/a_dot_burr.jpeg
   #   - images/a_dot_ham.jpeg
   assets:
-    - lib/fixtures/seasons.json
     - lib/fixtures/seasonsDict.json
     - images/spring-cherry-blossom-unsplash.jpg
     - images/summer-border-unsplash.jpg
