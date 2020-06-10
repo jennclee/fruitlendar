@@ -12,12 +12,12 @@ class ImageCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       height: 200,
-      width: 200,
+      // width: 200,
       child: SafeArea(
         child: CupertinoButton(
           child: Container(
             height: 200,
-            width: 200,
+            // width: 200,
             decoration: BoxDecoration(
               image: DecorationImage(
                 image: AssetImage(season.image),

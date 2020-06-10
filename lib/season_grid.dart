@@ -10,18 +10,29 @@ class SeasonGrid extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    List<Widget> seasonsList = [];
+    this.seasons.forEach((key, value) => {
+          seasonsList.add(Column(children: [new ImageCard(value)]))
+        });
     return Container(
       child: Column(
         children: [
           Row(children: [
-            Expanded(child: new ImageCard(seasons['Spring'])),
-            Expanded(child: new ImageCard(seasons['Summer'])),
+            Container(
+              padding: EdgeInsets.only(left: 30, top: 30),
+              child: Text(
+                'Explore other seasons',
+                textAlign: TextAlign.left,
+                style: TextStyle(
+                    color: Colors.black87,
+                    fontSize: 24,
+                    fontWeight: FontWeight.bold),
+              ),
+            ),
           ]),
           Row(
-            children: [
-              Expanded(child: new ImageCard(seasons['Autumn'])),
-              Expanded(child: new ImageCard(seasons['Winter'])),
-            ],
+            mainAxisSize: MainAxisSize.min,
+            children: seasonsList,
           ),
         ],
       ),

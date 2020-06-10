@@ -6,6 +6,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/services.dart' show rootBundle;
 
 import 'models/season.dart';
+import 'fixtures/northAmericaSeasons.dart';
 import 'hero.dart';
 import 'season_grid.dart';
 import 'season_page.dart';
@@ -51,12 +52,16 @@ class MyHomePageState extends State<MyHomePage> {
 
   MyHomePageState({this.title});
   Future<Map<String, Season>> _seasons;
+  DateTime currentTime = new DateTime.now();
+  String currentSeasonName;
 
   @override
   void initState() {
     super.initState();
 
     _seasons = loadSeasons();
+    int currentMonth = currentTime.month;
+    currentSeasonName = northAmericaSeasons[currentMonth]['season'];
   }
 
   Future<Map<String, Season>> loadSeasons() async {
@@ -75,13 +80,14 @@ class MyHomePageState extends State<MyHomePage> {
       builder: (context, snapshot) {
         if (snapshot.hasData) {
           Map<String, Season> seasons = snapshot.data;
+          Season currentSeason = seasons.remove(this.currentSeasonName);
           return CupertinoPageScaffold(
             navigationBar: CupertinoNavigationBar(
               middle:
                   Text(widget.title, style: TextStyle(color: Colors.black87)),
             ),
             child: Column(children: [
-              heroSection,
+              HeroSection(currentSeason),
               SeasonGrid(seasons),
             ]),
           );
