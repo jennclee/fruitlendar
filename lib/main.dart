@@ -1,102 +1,15 @@
-import 'dart:async' show Future;
-import 'dart:convert';
-
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:flutter/services.dart' show rootBundle;
+import 'package:provider/provider.dart';
 
-import 'models/season.dart';
-import 'styles.dart';
-import 'fixtures/northAmericaSeasons.dart';
-import 'hero.dart';
-import 'season_grid.dart';
-import 'season_page.dart';
+import 'models/app_state_model.dart';
+import 'app.dart';
 
 void main() {
-  runApp(MyApp());
-}
-
-class MyApp extends StatelessWidget {
-  static const String _title = 'Fruitlendar';
-
-  @override
-  Widget build(BuildContext context) {
-    return CupertinoApp(
-        title: _title,
-        theme: CupertinoThemeData(
-          barBackgroundColor: Colors.orange,
-          primaryColor: Colors.orange,
-          primaryContrastingColor: Colors.lightGreen[300],
-          scaffoldBackgroundColor: Styles.scaffoldBackground,
-          textTheme: CupertinoTextThemeData(
-            textStyle: TextStyle(color: Colors.black87),
-          ),
-        ),
-        home: MyHomePage(title: _title),
-        routes: {
-          SeasonPage.routeName: (context) => SeasonPage(),
-        });
-  }
-}
-
-class MyHomePage extends StatefulWidget {
-  final String title;
-
-  const MyHomePage({Key key, this.title}) : super(key: key);
-
-  @override
-  MyHomePageState createState() => MyHomePageState();
-}
-
-class MyHomePageState extends State<MyHomePage> {
-  final String title;
-
-  MyHomePageState({this.title});
-  Future<Map<String, Season>> _seasons;
-  DateTime currentTime = new DateTime.now();
-  String currentSeasonName;
-
-  @override
-  void initState() {
-    super.initState();
-
-    _seasons = loadSeasons();
-    int currentMonth = currentTime.month;
-    currentSeasonName = northAmericaSeasons[currentMonth]['season'];
-  }
-
-  Future<Map<String, Season>> loadSeasons() async {
-    String jsonString =
-        await rootBundle.loadString('lib/fixtures/seasonsDict.json');
-    Map<String, dynamic> jsonResponse = json.decode(jsonString);
-    Map<String, Season> seasons = {};
-    jsonResponse
-        .forEach((key, value) => {seasons[key] = new Season.fromJson(value)});
-    return seasons;
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return FutureBuilder(
-      builder: (context, snapshot) {
-        if (snapshot.hasData) {
-          Map<String, Season> seasons = snapshot.data;
-          Season currentSeason = seasons.remove(this.currentSeasonName);
-          return CupertinoPageScaffold(
-            navigationBar: CupertinoNavigationBar(
-              middle:
-                  Text(widget.title, style: TextStyle(color: Colors.black87)),
-            ),
-            child: Column(children: [
-              HeroSection(currentSeason),
-              SeasonGrid(seasons),
-            ]),
-          );
-        } else {
-          return Center(child: CircularProgressIndicator());
-        }
-      },
-      future: _seasons,
-    );
-  }
+  runApp(
+    ChangeNotifierProvider<AppStateModel>(
+      create: (_) => AppStateModel()..loadSeasons(),
+      child: MyApp(),
+    ),
+  );
 }
