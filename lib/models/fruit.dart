@@ -1,14 +1,21 @@
+import 'package:flutter/foundation.dart';
+
 class Fruit {
+  const Fruit({
+    @required this.name,
+    @required this.image,
+    @required this.info,
+    @required this.guide,
+    @required this.seasons,
+  })  : assert(name != null),
+        assert(image != null),
+        assert(info != null),
+        assert(guide != null),
+        assert(seasons != null);
+
   final String name;
   final String image;
   final String info;
-
-  Fruit({this.name, this.image, this.info});
-
-  factory Fruit.fromJson(Map<String, dynamic> jsonData) {
-    return Fruit(
-        name: jsonData['name'],
-        image: jsonData['image'],
-        info: jsonData['info']);
-  }
+  final String guide;
+  final List<String> seasons;
 }
