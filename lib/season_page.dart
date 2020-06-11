@@ -15,7 +15,7 @@ class SeasonPage extends StatelessWidget {
 
     return CupertinoPageScaffold(
         child: Consumer<AppStateModel>(builder: (context, model, child) {
-      List<Fruit> fruits = model.getFruits();
+      List<Fruit> fruits = model.getFruits(args.name);
       List<FruitCard> fruitCardList = [];
       for (var i = 0; i < fruits.length; i++) {
         fruitCardList.add(new FruitCard(fruits[i]));

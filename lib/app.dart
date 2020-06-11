@@ -6,6 +6,7 @@ import 'models/app_state_model.dart';
 import 'styles.dart';
 import 'season_page.dart';
 import 'hero.dart';
+import 'season_grid.dart';
 
 class MyApp extends StatelessWidget {
   @override
@@ -42,6 +43,7 @@ class MyHomePage extends StatelessWidget {
               largeTitle: Text('Fruitlendar'),
             ),
             HeroSection(),
+            SeasonGrid(),
           ],
         );
       }),

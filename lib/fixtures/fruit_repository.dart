@@ -91,9 +91,9 @@ class FruitRepository {
       seasons: ["Summer"],
     ),
     Fruit(
-      name: "kiwifruit",
-      image: "images/kiwifruit.png",
-      info: "Yum kiwifruit!",
+      name: "kiwi",
+      image: "images/kiwi.png",
+      info: "Yum kiwi!",
       guide: "Picking kiwi requires skill",
       seasons: ["Spring", "Autumn", "Winter"],
     ),

@@ -19,13 +19,17 @@ class AppStateModel extends foundation.ChangeNotifier {
     return _currentSeason;
   }
 
+  List<Season> getNonCurrentSeasons() {
+    return _nonCurrentSeasons;
+  }
+
+  List<Fruit> getFruits(String seasonName) {
+    return FruitRepository.loadFruits(seasonName);
+  }
+
   void loadSeasons() {
     _currentSeason = SeasonRepository.loadCurrentSeason(_currentMonth);
     _nonCurrentSeasons = SeasonRepository.loadNonCurrentSeasons(_currentMonth);
     notifyListeners();
-  }
-
-  List<Fruit> getFruits() {
-    return FruitRepository.loadFruits(_currentSeason.name);
   }
 }
