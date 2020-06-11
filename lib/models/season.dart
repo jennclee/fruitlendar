@@ -1,22 +1,18 @@
-import 'fruit.dart';
+import 'package:flutter/foundation.dart';
 
 class Season {
-  String name;
-  String image;
-  List<Fruit> fruits;
+  const Season({
+    @required this.name,
+    @required this.image,
+    @required this.description,
+    @required this.monthsNA,
+  })  : assert(name != null),
+        assert(image != null),
+        assert(description != null),
+        assert(monthsNA != null);
 
-  Season({this.name, this.image, this.fruits});
-
-  factory Season.fromJson(Map<String, dynamic> jsonData) {
-    List<Fruit> fruitlist = [];
-    for (var i = 0; i < jsonData['fruits'].length; i++) {
-      fruitlist.add(new Fruit.fromJson(jsonData['fruits'][i]));
-    }
-
-    return Season(
-      name: jsonData['name'],
-      image: jsonData['imageLink'],
-      fruits: fruitlist,
-    );
-  }
+  final String name;
+  final String image;
+  final String description;
+  final List<int> monthsNA;
 }
