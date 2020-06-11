@@ -5,6 +5,7 @@ import 'package:provider/provider.dart';
 import 'models/app_state_model.dart';
 import 'styles.dart';
 import 'season_page.dart';
+import 'hero.dart';
 
 class MyApp extends StatelessWidget {
   @override
@@ -35,10 +36,12 @@ class MyHomePage extends StatelessWidget {
     return CupertinoPageScaffold(
       child: Consumer<AppStateModel>(builder: (context, model, child) {
         return CustomScrollView(
+          semanticChildCount: 2,
           slivers: <Widget>[
             CupertinoSliverNavigationBar(
               largeTitle: Text('Fruitlendar'),
             ),
+            HeroSection(),
           ],
         );
       }),

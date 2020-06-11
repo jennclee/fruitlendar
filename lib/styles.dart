@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/widgets.dart';
 
 abstract class Styles {
@@ -26,5 +25,6 @@ abstract class Styles {
     fontWeight: FontWeight.normal,
   );
 
-  static const scaffoldBackground = Color(0xFFFFECB3);
+  static const scaffoldBackground = Color(0xFFEEEEEE);
+  static const containerColor = Color(0xFFFFF8E1);
 }

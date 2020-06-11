@@ -11,10 +11,13 @@ class AppStateModel extends foundation.ChangeNotifier {
     this._currentMonth = currentDate.month;
   }
 
-  List<Fruit> _allFruits;
   Season _currentSeason;
   List<Season> _nonCurrentSeasons;
   int _currentMonth;
+
+  Season getCurrentSeason() {
+    return _currentSeason;
+  }
 
   void loadSeasons() {
     _currentSeason = SeasonRepository.loadCurrentSeason(_currentMonth);
@@ -22,8 +25,7 @@ class AppStateModel extends foundation.ChangeNotifier {
     notifyListeners();
   }
 
-  void loadFruits() {
-    _allFruits = FruitRepository.loadFruits(_currentSeason.name);
-    notifyListeners();
+  List<Fruit> getFruits() {
+    return FruitRepository.loadFruits(_currentSeason.name);
   }
 }

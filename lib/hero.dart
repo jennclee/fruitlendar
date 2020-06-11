@@ -1,34 +1,30 @@
-import 'package:flutter/material.dart';
-import 'models/season.dart';
+import 'package:flutter/cupertino.dart';
+import 'package:provider/provider.dart';
+
 import 'styles.dart';
+import 'models/app_state_model.dart';
 import 'image_card.dart';
 
 class HeroSection extends StatelessWidget {
-  final Season currentSeason;
-
-  HeroSection(this.currentSeason);
-
+  @override
   Widget build(BuildContext context) {
-    return Container(
-      padding: EdgeInsets.only(left: 30, top: 30),
-      child: Column(
-        children: [
-          Row(
+    return Consumer<AppStateModel>(builder: (context, model, child) {
+      final currentSeason = model.getCurrentSeason();
+      return SliverToBoxAdapter(
+        child: Container(
+          color: Styles.containerColor,
+          child: Column(
             children: [
-              Container(
-                child: Text(
-                  'Current season',
-                  textAlign: TextAlign.left,
-                  style: Styles.header,
-                ),
+              Text(
+                "Current season",
+                style: Styles.header,
+                textAlign: TextAlign.left,
               ),
+              ImageCard(currentSeason),
             ],
           ),
-          Row(
-            children: [new ImageCard(currentSeason)],
-          )
-        ],
-      ),
-    );
+        ),
+      );
+    });
   }
 }
