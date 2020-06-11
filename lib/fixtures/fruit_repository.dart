@@ -34,7 +34,7 @@ class FruitRepository {
     ),
     Fruit(
       name: "blackberry",
-      image: "images/blackberry.png",
+      image: "images/blackcurrant.png",
       info: "Yum blackberries!",
       guide:
           "Bananas show their ripeness through the peel. Bananas will turn from green to yellow with brown spots as they become more ripe.",
