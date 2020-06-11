@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'models/season.dart';
+import 'styles.dart';
 import 'season_page.dart';
 
 class ImageCard extends StatelessWidget {
@@ -11,39 +12,49 @@ class ImageCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 200,
-      // width: 200,
-      child: SafeArea(
-        child: CupertinoButton(
-          child: Container(
-            height: 200,
-            // width: 200,
-            decoration: BoxDecoration(
-              image: DecorationImage(
-                image: AssetImage(season.image),
-                fit: BoxFit.cover,
+      width: 130,
+      decoration:
+          BoxDecoration(borderRadius: BorderRadius.circular(30), boxShadow: [
+        BoxShadow(
+          color: Color.fromARGB(30, 0, 0, 1),
+          spreadRadius: 1,
+          blurRadius: 5,
+          offset: Offset(3, 4),
+        )
+      ]),
+      child: CupertinoButton(
+        color: Styles.containerColor,
+        borderRadius: BorderRadius.circular(30),
+        padding: EdgeInsets.all(20),
+        child: Container(
+          child: Column(
+            children: [
+              Container(
+                margin: EdgeInsets.only(bottom: 30),
+                child: CircleAvatar(
+                  radius: 30,
+                  backgroundColor: Color(0xDD000000),
+                  child: CircleAvatar(
+                    radius: 28,
+                    backgroundColor: Styles.avatarBackground,
+                    backgroundImage: AssetImage(season.image),
+                  ),
+                ),
               ),
-              borderRadius: BorderRadius.circular(12),
-            ),
-            child: Container(
-              margin: EdgeInsets.all(7),
-              child: Text(
+              Text(
                 season.name,
-                style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 20,
-                    fontWeight: FontWeight.w600),
+                style: Styles.fruitCardTitle,
               ),
-            ),
+            ],
           ),
-          onPressed: () {
-            Navigator.pushNamed(
-              context,
-              SeasonPage.routeName,
-              arguments: season,
-            );
-          },
         ),
+        onPressed: () {
+          Navigator.pushNamed(
+            context,
+            SeasonPage.routeName,
+            arguments: season,
+          );
+        },
       ),
     );
   }
